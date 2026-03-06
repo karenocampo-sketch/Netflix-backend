@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  # Base de datos para Persona 1 (Auth)
+  auth-db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: user_auth
+      POSTGRES_PASSWORD: password_auth
+      POSTGRES_DB: netflix_auth
+    ports:
+      - "5432:5432"
+
+  # Base de datos para Persona 2 (Catálogo)
+  catalog-db:
+    image: mongo:latest
+    restart: always
+    ports:
+      - "27017:27017"
+
+  # Base de datos para Persona 4 (Actividad/Historial)
+  activity-cache:
+    image: redis:alpine
+    restart: always
+    ports:
+      - "6379:6379"
