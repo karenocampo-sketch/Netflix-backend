@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\Streaming.Service.props" />
-</Project>

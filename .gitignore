@@ -1,0 +1,40 @@
+# Build results
+bin/
+obj/
+Debug/
+Release/
+
+# Visual Studio files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.pdb
+*.cache
+*.log
+*.vs/
+
+# NuGet
+*.nupkg
+*.snupkg
+*.nuget.props
+*.nuget.targets
+project.assets.json
+project.nuget.cache
+*.csproj.nuget.dgspec.json
+*.csproj.nuget.g.props
+*.csproj.nuget.g.targets
+
+# Rider IDE
+.idea/
+*.sln.iml
+
+# ASP.NET / web
+wwwroot/lib/
+
+# Others / temp
+*.tmp
+*.bak
+*.swp
+*.DS_Store
+
