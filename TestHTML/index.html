@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Streaming</title>
+</head>
+<body>
+  <h1>Mini catálogo de videos</h1>
+  <ul id="videoList"></ul>
+
+  <video id="player" controls width="600" style="margin-top:20px">
+    <source id="videoSource" src="" type="video/mp4">
+    Tu navegador no soporta video.
+  </video>
+
+  <script>
+    const apiUrl = 'http://localhost:5180/Streaming';
+    const videoListEl = document.getElementById('videoList');
+    const player = document.getElementById('player');
+    const videoSource = document.getElementById('videoSource');
+
+    fetch(apiUrl)
+      .then(res => res.json())
+      .then(videos => {
+        videos.forEach(video => {
+          const li = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = "#";
+          link.textContent = video;
+          link.onclick = () => {
+            videoSource.src = `${apiUrl}/${video}`;
+            player.load();
+            player.play();
+          };
+          li.appendChild(link);
+          videoListEl.appendChild(li);
+        });
+      })
+      .catch(err => console.error('Error al cargar videos:', err));
+  </script>
+</body>
+</html>
