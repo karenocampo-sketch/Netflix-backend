@@ -16,6 +16,25 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+var profiles = new List<Profile>
+{
+    new Profile(Guid.NewGuid(), "Alice", "alice@example.com"),
+    new Profile(Guid.NewGuid(), "Bob", "bob@example.com"),
+    new Profile(Guid.NewGuid(), "Carol", "carol@example.com")
+};
+
+app.MapGet("/profiles", () => Results.Ok(profiles));
+
+app.MapDelete("/profiles/{id}", (Guid id) =>
+{
+    var profile = profiles.FirstOrDefault(p => p.Id == id);
+    if (profile == null)
+        return Results.NotFound(new { message = "Profile not found" });
+
+    profiles.Remove(profile);
+    return Results.NoContent();
+});
+
 var summaries = new[]
 {
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
@@ -42,3 +61,5 @@ record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
+
+record Profile(Guid Id, string Name, string Email);
