@@ -1,0 +1,14 @@
+# Carpetas de compilación
+bin/
+obj/
+
+# Archivos de usuario / Visual Studio
+*.user
+*.suo
+*.pdb
+*.cache
+*.log
+
+# Archivos temporales
+*.tmp
+*.vs/
