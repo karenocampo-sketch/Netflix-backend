@@ -1,8 +1,12 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Activity.Service", "Activity.Service\Activity.Service.csproj", "{AE24F214-AC5D-56D9-ABBE-CB5F3E608B20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth.Service", "Auth.Service\Auth.Service.csproj", "{9DEDA320-91FA-41BD-8102-00BD0BD004D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Streaming.Service", "Streaming.Service\Streaming.Service.csproj", "{00F531EC-1DB3-443B-9313-6B1794958769}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,6 +18,14 @@ Global
 		{AE24F214-AC5D-56D9-ABBE-CB5F3E608B20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE24F214-AC5D-56D9-ABBE-CB5F3E608B20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE24F214-AC5D-56D9-ABBE-CB5F3E608B20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DEDA320-91FA-41BD-8102-00BD0BD004D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DEDA320-91FA-41BD-8102-00BD0BD004D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DEDA320-91FA-41BD-8102-00BD0BD004D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DEDA320-91FA-41BD-8102-00BD0BD004D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00F531EC-1DB3-443B-9313-6B1794958769}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00F531EC-1DB3-443B-9313-6B1794958769}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00F531EC-1DB3-443B-9313-6B1794958769}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00F531EC-1DB3-443B-9313-6B1794958769}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
