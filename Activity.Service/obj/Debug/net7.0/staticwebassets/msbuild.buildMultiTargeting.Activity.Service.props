@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/Activity.Service.props" />
+</Project>
