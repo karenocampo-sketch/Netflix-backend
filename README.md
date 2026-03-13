@@ -91,3 +91,73 @@ Netflix-backend.sln
 > "Este proyecto ha sido unificado bajo una solución global de .NET para facilitar la comunicación entre servicios. Por favor, asegúrense de realizar un `git pull origin main` antes de iniciar sus tareas diarias."
 
 ---
+
+##-------------
+
+## 🛠️ Solución de Problemas (Troubleshooting)
+
+### 1. Error: "Port is already allocated" (Ej: Puerto 5203 o 6379 ocupado)
+
+Este error ocurre cuando otra aplicación ya está usando el puerto que Docker o .NET necesitan.
+
+- **Solución (Mac/Linux):**
+
+```bash
+# Buscar el proceso (ejemplo puerto 6379)
+sudo lsof -i :6379
+# Matar el proceso usando el PID que aparezca
+kill -9 <PID>
+
+```
+
+- **Solución (Windows PowerShell):**
+
+```powershell
+Stop-Process -Id (Get-NetTCPConnection -LocalPort 6379).OwningProcess -Force
+
+```
+
+### 2. Error: "Cannot connect to the Docker daemon"
+
+Significa que la aplicación Docker Desktop no está iniciada o el motor se quedó bloqueado.
+
+- **Solución:**
+
+1. Abre la aplicación **Docker Desktop**.
+2. Espera a que el icono de la ballena esté quieto (verde).
+3. Si persiste, ve a _Settings > Troubleshoot > Restart Docker Desktop_.
+
+### 3. Error: "Project not found in solution"
+
+Si al intentar ejecutar no encuentra un servicio, es porque no está vinculado al archivo `.sln`.
+
+- **Solución:** Ejecuta en la raíz:
+
+```bash
+
+dotnet sln add Nombre.Service/Nombre.Service.csproj
+
+```
+
+### 4. Limpieza de Caché de .NET
+
+Si el código no reconoce cambios nuevos o da errores extraños de compilación:
+
+Solución: Ejecuta estos comandos en la raíz del proyecto para limpiar todo rastro de compilaciones previas:
+
+- **Solución:**
+
+```bash
+
+dotnet clean
+dotnet restore
+
+```
+
+---
+
+### 👑 Tu siguiente paso como Líder
+
+Una vez subas esto, tu repositorio estará al nivel de un proyecto profesional de empresa grande.
+
+**¿Te gustaría que te ayude a crear un pequeño "Health Check" en C#?** Es una página simple donde puedas ver si los 4 servicios están "vivos" y conectados a sus bases de datos con un solo vistazo. ¡Sería el cierre perfecto para tu dashboard de control!
