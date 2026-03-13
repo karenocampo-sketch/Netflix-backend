@@ -38,3 +38,11 @@ wwwroot/lib/
 *.swp
 *.DS_Store
 
+# Archivos de compilación de .NET
+[Bb]in/
+[Oo]bj/
+# Archivos de configuración de VS Code
+.vscode/
+# Archivos de sistema
+.DS_Store
+*.user
