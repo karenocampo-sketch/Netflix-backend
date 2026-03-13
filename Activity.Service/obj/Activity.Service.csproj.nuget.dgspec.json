@@ -39,13 +39,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
-            "Microsoft.AspNetCore.OpenApi": {
-              "target": "Package",
-              "version": "[7.0.20, )"
-            },
             "StackExchange.Redis": {
               "target": "Package",
-              "version": "[2.11.8, )"
+              "version": "[2.6.122, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
