@@ -155,9 +155,3 @@ dotnet restore
 ```
 
 ---
-
-### 👑 Tu siguiente paso como Líder
-
-Una vez subas esto, tu repositorio estará al nivel de un proyecto profesional de empresa grande.
-
-**¿Te gustaría que te ayude a crear un pequeño "Health Check" en C#?** Es una página simple donde puedas ver si los 4 servicios están "vivos" y conectados a sus bases de datos con un solo vistazo. ¡Sería el cierre perfecto para tu dashboard de control!
