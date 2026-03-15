@@ -1,171 +1,119 @@
-# 🎬 Netflix Clone - Microservicios & React
+¡Qué buen README tienes! Está muy completo. Para que sea un documento de nivel **Senior**, vamos a integrar lo que lograste hoy: la unificación de carpetas, el motor de video en el puerto 5003, la actualización a .NET 8 y el nuevo proyecto de **React (Netflix Academy)**.
 
-¡Bienvenido al proyecto! Esta es una plataforma de streaming funcional.
+Aquí tienes la versión actualizada. Copia y pega esto en tu archivo `README.md` en la raíz:
 
-## 🏗️ Estructura del Proyecto
+---
 
-- **📂 Netflix-backend:** Microservicios en .NET 8 (Streaming, Auth, Catalog, Activity).
-- **📂 netflix-frontend:** Interfaz de usuario creada con React + Vite.
+````markdown
+# 🎬 Netflix Clone & Academy - Fullstack Edition
 
-## 🚀 Cómo ejecutarlo
+¡Bienvenido al ecosistema unificado! Este proyecto combina una arquitectura de **microservicios en el backend** con una interfaz moderna en **React** que incluye una sección innovadora de cursos cortos (Academy).
 
-1. Levanta el backend en la carpeta `Streaming.Service` con `dotnet run`.
-2. Levanta el frontend en `netflix-frontend` con `npm run dev`.
+## 🏗️ Estructura Global del Repositorio
 
-# 🎬 Netflix Clone Backend - Microservicios (.NET Edition)
+- **📂 Netflix-backend:** Microservicios distribuidos en .NET 8.
+- **📂 netflix-frontend:** Interfaz de usuario creada con React + Vite, optimizada para streaming y educación.
 
-Este es un proyecto de backend distribuido que replica las funcionalidades núcleo de Netflix. El sistema está diseñado bajo una arquitectura de **microservicios**, utilizando el ecosistema de **.NET** para garantizar alta escalabilidad y un desarrollo modular.
+---
+
+## 🛰️ Ecosistema de Servicios (Puertos y Tecnología)
+
+| Servicio              | Puerto | Stack           | Descripción                          |
+| --------------------- | ------ | --------------- | ------------------------------------ |
+| **Frontend (React)**  | 5173   | Vite + Lucide   | Interfaz principal y reproductor.    |
+| **Auth.Service**      | 5001   | PostgreSQL      | Gestión de usuarios y JWT.           |
+| **Catalog.Service**   | 5002   | MongoDB         | Catálogo de películas y series.      |
+| **Streaming.Service** | 5003   | .NET 8 (Videos) | Motor de streaming (Ruta: `/watch`). |
+| **Activity.Service**  | 5203   | Redis           | Historial, progreso y HealthChecks.  |
+
+---
+
+## 🚀 Guía de Inicio Rápido (Fullstack)
+
+### 1. Preparar la Infraestructura (Docker)
+
+Asegúrate de tener **Docker Desktop** iniciado y en la raíz del backend ejecuta:
+
+```bash
+cd Netflix-backend
+docker compose up -d
+```
+````
+
+### 2. Levantar el Backend (Motor)
+
+En una terminal, entra al servicio de streaming (o abre la solución `.sln`):
+
+```bash
+cd Netflix-backend/Streaming.Service
+dotnet run
+
+```
+
+### 3. Levantar el Frontend (Interfaz)
+
+En una **segunda terminal**, ve a la carpeta de React:
+
+```bash
+cd netflix-frontend
+npm install   # Solo la primera vez
+npm run dev
+
+```
+
+Accede a: `http://localhost:5173`
+
+---
+
+## ✨ El Plus: Netflix Academy (Diferenciador)
+
+A diferencia del Netflix tradicional, este proyecto incluye **Netflix Academy**:
+
+- **Streaming Educativo:** Servimos cursos cortos directamente desde nuestro microservicio.
+- **Progress Tracking:** Barra de progreso visual integrada en el reproductor.
+- **Categorización:** Separación inteligente entre contenido de entretenimiento y lecciones de aprendizaje.
+
+---
 
 ## 👥 Equipo de Desarrollo
 
-- **Persona 1:** Servicio de Autenticación (Auth & Users)
-
-- **Persona 2:** Servicio de Catálogo (Movies & Series)
-
-- **Persona 3:** Servicio de Streaming (Video Engine)
-
-- **Persona 4:** Servicio de Actividad (History & Favorites)
+- **Líder de Proyecto:** Karen Ocampo (Arquitectura e Integración Fullstack)
+- **Persona 1:** Auth & Users Service
+- **Persona 2:** Catalog & Metadata Service
+- **Persona 3:** Video Engine Specialist
+- **Persona 4:** Activity & Redis Expert
 
 ---
 
-## 🛠️ Stack Tecnológico
+## 🛠️ Solución de Problemas (Troubleshooting)
 
-- **Lenguaje:** .NET 7 / 8 (C#)
-- **Bases de Datos:** \* **PostgreSQL:** Autenticación y Usuarios.
-- **MongoDB:** Catálogo de películas y series.
-- **Redis:** Caché de actividad y progreso de video.
+### 1. Error de CORS (Frontend no carga videos)
 
-- **Contenedores:** Docker & Docker-Compose (Infraestructura de bases de datos).
-- **Documentación:** Swagger / OpenAPI.
+Si el video no aparece en el navegador, asegúrate de que el `Streaming.Service` tenga habilitada la política CORS en `Program.cs`:
 
----
-
-## 🚀 Guía de Inicio Rápido
-
-### 1. Clonar el repositorio
-
-```bash
-git clone https://github.com/tu-usuario/netflix-backend.git
-cd netflix-backend
+```csharp
+app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
 ```
 
-### 2. Levantar la Infraestructura (Docker)
+### 2. Versión de .NET SDK
 
-Asegúrate de tener **Docker Desktop** iniciado y ejecuta:
+Este proyecto ha sido actualizado a **.NET 8**. Si recibes el error `NETSDK1045`, descarga el SDK de .NET 8 desde el sitio oficial de Microsoft.
 
-```bash
-docker compose up -d
+### 3. Puertos Ocupados (Mac/Linux)
 
-```
-
-_Esto activará Postgres (5432), MongoDB (27017) y Redis (6379)._
-
-### 3. Ejecutar el Proyecto
-
-Para abrir todos los microservicios al tiempo, abre el archivo de solución en la raíz:
+Si el puerto 5003 o 5173 está en uso:
 
 ```bash
-# Abrir con Visual Studio o VS Code
-Netflix-backend.sln
+sudo lsof -i :5003
+kill -9 <PID>
 
 ```
-
----
-
-## 🛰️ Mapa de Endpoints y Puertos
-
-| Servicio              | Puerto | Base de Datos   | Descripción                  |
-| --------------------- | ------ | --------------- | ---------------------------- |
-| **Auth.Service**      | 5001   | PostgreSQL      | Gestión de usuarios y JWT.   |
-| **Catalog.Service**   | 5002   | MongoDB         | Catálogo de contenido.       |
-| **Streaming.Service** | 5003   | Archivos (.mp4) | Motor de streaming de video. |
-| **Activity.Service**  | 5203   | Redis           | Historial y progreso.        |
-
----
-
-## 📂 Flujo de Trabajo en Git
-
-1. **Main:** Código estable y unificado.
-2. **Features:** Cada integrante trabaja en su rama: `feature/auth`, `feature/catalog`, `feature/streaming`, `feature/activity`.
-3. **Integración:** Antes de unir cambios a `main`, se debe asegurar que el servicio compila y no rompe la solución global `.sln`.
-
----
-
-## 📋 Reglas del Proyecto
-
-- **Uso de .sln:** Todos los nuevos proyectos deben agregarse a la solución global mediante `dotnet sln add`.
-- **Gitignore:** No subir carpetas `bin/`, `obj/` ni archivos `.env`.
-- **Docker:** No detener los contenedores de base de datos mientras se prueban los servicios.
 
 ---
 
 ### 👑 Nota de la Líder
 
-> "Este proyecto ha sido unificado bajo una solución global de .NET para facilitar la comunicación entre servicios. Por favor, asegúrense de realizar un `git pull origin main` antes de iniciar sus tareas diarias."
-
----
-
-##-------------
-
-## 🛠️ Solución de Problemas (Troubleshooting)
-
-### 1. Error: "Port is already allocated" (Ej: Puerto 5203 o 6379 ocupado)
-
-Este error ocurre cuando otra aplicación ya está usando el puerto que Docker o .NET necesitan.
-
-- **Solución (Mac/Linux):**
-
-```bash
-# Buscar el proceso (ejemplo puerto 6379)
-sudo lsof -i :6379
-# Matar el proceso usando el PID que aparezca
-kill -9 <PID>
-
-```
-
-- **Solución (Windows PowerShell):**
-
-```powershell
-Stop-Process -Id (Get-NetTCPConnection -LocalPort 6379).OwningProcess -Force
-
-```
-
-### 2. Error: "Cannot connect to the Docker daemon"
-
-Significa que la aplicación Docker Desktop no está iniciada o el motor se quedó bloqueado.
-
-- **Solución:**
-
-1. Abre la aplicación **Docker Desktop**.
-2. Espera a que el icono de la ballena esté quieto (verde).
-3. Si persiste, ve a _Settings > Troubleshoot > Restart Docker Desktop_.
-
-### 3. Error: "Project not found in solution"
-
-Si al intentar ejecutar no encuentra un servicio, es porque no está vinculado al archivo `.sln`.
-
-- **Solución:** Ejecuta en la raíz:
-
-```bash
-
-dotnet sln add Nombre.Service/Nombre.Service.csproj
-
-```
-
-### 4. Limpieza de Caché de .NET
-
-Si el código no reconoce cambios nuevos o da errores extraños de compilación:
-
-Solución: Ejecuta estos comandos en la raíz del proyecto para limpiar todo rastro de compilaciones previas:
-
-- **Solución:**
-
-```bash
-
-dotnet clean
-dotnet restore
-
-```
+> "Hemos unificado el repositorio para que el Frontend y el Backend vivan en armonía. La arquitectura ahora permite escalar tanto contenido de entretenimiento como módulos educativos. ¡Hagan pull y disfruten del streaming!"
 
 ---
