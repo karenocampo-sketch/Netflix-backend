@@ -1,3 +1,17 @@
+# 🎬 Netflix Clone - Microservicios & React
+
+¡Bienvenido al proyecto! Esta es una plataforma de streaming funcional.
+
+## 🏗️ Estructura del Proyecto
+
+- **📂 Netflix-backend:** Microservicios en .NET 8 (Streaming, Auth, Catalog, Activity).
+- **📂 netflix-frontend:** Interfaz de usuario creada con React + Vite.
+
+## 🚀 Cómo ejecutarlo
+
+1. Levanta el backend en la carpeta `Streaming.Service` con `dotnet run`.
+2. Levanta el frontend en `netflix-frontend` con `npm run dev`.
+
 # 🎬 Netflix Clone Backend - Microservicios (.NET Edition)
 
 Este es un proyecto de backend distribuido que replica las funcionalidades núcleo de Netflix. El sistema está diseñado bajo una arquitectura de **microservicios**, utilizando el ecosistema de **.NET** para garantizar alta escalabilidad y un desarrollo modular.
