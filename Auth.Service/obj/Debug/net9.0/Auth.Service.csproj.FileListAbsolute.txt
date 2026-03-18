@@ -39,3 +39,6 @@ C:\Users\Tecnico\Desktop\Proyecto Netflix\Netflix-backend\Auth.Service\obj\Debug
 C:\Users\Tecnico\Desktop\Proyecto Netflix\Netflix-backend\Auth.Service\obj\Debug\net9.0\Auth.Service.pdb
 C:\Users\Tecnico\Desktop\Proyecto Netflix\Netflix-backend\Auth.Service\obj\Debug\net9.0\Auth.Service.genruntimeconfig.cache
 C:\Users\Tecnico\Desktop\Proyecto Netflix\Netflix-backend\Auth.Service\obj\Debug\net9.0\ref\Auth.Service.dll
+C:\Users\Tecnico\Desktop\Proyecto Netflix\Netflix-backend\Auth.Service\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Tecnico\Desktop\Proyecto Netflix\Netflix-backend\Auth.Service\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Tecnico\Desktop\Proyecto Netflix\Netflix-backend\Auth.Service\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
