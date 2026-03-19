@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "9MMbDn22FH2s8IJ7g6nDhF1xejcY1oQP+WcS2VhfCzo=",
+  "Hash": "MufOhaGjk+sNJLkPp3l2+WhZ/Z8yNOACiYWUj69oTMg=",
   "Source": "Activity.Service",
   "BasePath": "_content/Activity.Service",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }
