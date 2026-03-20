@@ -13,10 +13,18 @@ import {
   Layout,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Login from "./auth/pages/Login";
 
 function App() {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [hoveredMovie, setHoveredMovie] = useState(null);
+  const [currentUser, setCurrentUser] = useState(() => {
+  try { return JSON.parse(localStorage.getItem("netflix_user")); }
+  catch { return null; }
+});
+if (!currentUser) {
+  return <Login onLoginSuccess={(user) => setCurrentUser(user)} />;
+}
   const [activeTab, setActiveTab] = useState("home");
 
   const baseUrl = "http://localhost:5003/watch/";
